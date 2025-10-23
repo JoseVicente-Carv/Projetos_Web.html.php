@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro de Jogo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-black to-green-900 min-h-screen items-center justify-center
+flex flex-col">
+
+    <div class="w-full max-w-md p-8">
+        <div class="w-full max-w-md bg-black bg-opacity-50 rounded-lg shadow-lg p-8 border border-green-500">
+            <h2 class="text-3xl font-bold text-center text-yellow-400 mb-8">Cadastrar Novo Jogo</h2>
+            
+            <form method="post" action="cadastrar.php">
+                <div class="mb-4">
+                    <label for="nome" class="block text-green-400 text-sm font-bold mb-2">Nome</label>
+                    <input type="text" id="nome" name="nomeDigitado" class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-800 text-white border-green-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    placeholder="Nome do Jogo">
+                
+                </div>
+                
+                <div class="mb-4">
+                    <label for="produtor" class="block text-green-400 text-sm font-bold mb-2">Produtor</label>
+                    <input type="text" id="produtor" name="produtorDigitado" class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-800 text-white border-green-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Nome do Produtor">
+                </div>
+                
+                <div class="mb-4">
+                    <label for="plataforma" class="block text-green-400 text-sm font-bold mb-2">Plataforma</label>
+                    <input type="text" id="plataforma" name="plataformaDigitado" class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-800 text-white border-green-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Ex: PC, PlayStation 5, Xbox Series X">
+                </div>
+                
+                <div class="mb-6">
+                    <label for="preco" class="block text-green-400 text-sm font-bold mb-2">Preço</label>
+                    <input type="number" id="preco" name="precoDigitado" class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-800 text-white border-green-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="R$ 0,00">
+                </div>
+                
+                <div class="flex items-center justify-between">
+                    <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out" 
+                    type="submit">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-lg w-full max-w-md p-8 flex gap-2">
+        <?php
+        $sql = "SELECT * FROM tabela_games";
+        $resultado = $conexao -> query($sql);
+
+        if ($resultado -> num_rows > 0) {
+            while ($linha = $resultado->fetch_assoc()) {
+                echo "<div>";
+                echo "<p> Nome: ".$linha['nome']."</p>";
+                echo "<p> Produtor: ".$linha['produtor']."</p>";
+                echo "<p> Plataforma: ".$linha['plataforma']."</p>";
+                echo "<p> Preço: R$".number_format($linha['preco'],2,",",".")."</p>";
+                echo "<hr>";
+                echo "</div>";
+            }
+        } else {echo "<p> Não há nenhum registro. </p>"}
+        ?>
+    </div>
+
+</body>
+</html>

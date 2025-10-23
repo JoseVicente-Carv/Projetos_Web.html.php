@@ -1,0 +1,96 @@
+    Eu: 
+gere um código html para um formulário com os campos (Nome, Produtor, Plataforma, Preço), e formate esse código HTML utilizando Tailwind, com as cores (verde, amarelo e preto) e ao fundo um degradê
+
+    Google Gemini:  
+Com certeza\! Abaixo está o código HTML para um formulário com os campos "Nome", "Produtor", "Plataforma" e "Preço", estilizado com Tailwind CSS nas cores verde, amarelo e preto, e com um fundo em degradê.
+
+Este formulário está inserido em uma `div` que ocupa toda a altura da tela (`h-screen`) e centraliza o conteúdo. 
+O fundo do corpo da página (`<body>`) possui um degradê que vai do preto ao verde escuro. O formulário em si tem um fundo preto semi-transparente, bordas verdes e um botão de envio amarelo vibrante.
+
+```html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro de Jogo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-black to-green-900">
+
+    <div class="container mx-auto flex items-center justify-center h-screen">
+        <div class="w-full max-w-md bg-black bg-opacity-50 rounded-lg shadow-lg p-8 border border-green-500">
+            <h2 class="text-3xl font-bold text-center text-yellow-400 mb-8">Cadastrar Jogo</h2>
+            <form>
+                <div class="mb-4">
+                    <label for="nome" class="block text-green-400 text-sm font-bold mb-2">Nome</label>
+                    <input type="text" id="nome" name="nome" class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-800 text-white border-green-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Nome do Jogo">
+                </div>
+                <div class="mb-4">
+                    <label for="produtor" class="block text-green-400 text-sm font-bold mb-2">Produtor</label>
+                    <input type="text" id="produtor" name="produtor" class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-800 text-white border-green-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Nome do Produtor">
+                </div>
+                <div class="mb-4">
+                    <label for="plataforma" class="block text-green-400 text-sm font-bold mb-2">Plataforma</label>
+                    <input type="text" id="plataforma" name="plataforma" class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-800 text-white border-green-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Ex: PC, PlayStation 5, Xbox Series X">
+                </div>
+                <div class="mb-6">
+                    <label for="preco" class="block text-green-400 text-sm font-bold mb-2">Preço</label>
+                    <input type="text" id="preco" name="preco" class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-800 text-white border-green-600 focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="R$ 0,00">
+                </div>
+                <div class="flex items-center justify-between">
+                    <button class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full transition duration-300 ease-in-out" type="button">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
+```
+
+### Detalhes das classes do Tailwind CSS utilizadas:
+
+  * **Fundo em Degradê:**
+
+      * `bg-gradient-to-br`: Define um degradê na direção "para o canto inferior direito" (bottom-right).
+      * `from-black`: Cor inicial do degradê como preto.
+      * `to-green-900`: Cor final do degradê como um tom escuro de verde.
+
+  * **Container do Formulário:**
+
+      * `container mx-auto`: Centraliza o container.
+      * `flex items-center justify-center h-screen`: Centraliza o conteúdo do container vertical e horizontalmente na tela.
+      * `w-full max-w-md`: Define a largura máxima do formulário.
+      * `bg-black bg-opacity-50`: Fundo preto com 50% de opacidade.
+      * `rounded-lg shadow-lg`: Bordas arredondadas e uma sombra projetada.
+      * `p-8`: Adiciona preenchimento interno.
+      * `border border-green-500`: Adiciona uma borda na cor verde.
+
+  * **Títulos e Rótulos (Labels):**
+
+      * `text-yellow-400`: Define a cor do texto do título como amarelo.
+      * `text-green-400`: Define a cor do texto dos rótulos como verde.
+      * `font-bold`: Aplica negrito ao texto.
+      * `text-3xl`, `text-sm`: Controlam o tamanho da fonte.
+      * `mb-2`, `mb-8`: Adicionam margem inferior para espaçamento.
+
+  * **Campos de Entrada (Inputs):**
+
+      * `shadow appearance-none border rounded`: Estilização básica para remover a aparência padrão, adicionar sombra e bordas arredondadas.
+      * `w-full`: Faz com que o campo ocupe toda a largura disponível.
+      * `py-2 px-3`: Adiciona preenchimento vertical e horizontal.
+      * `bg-gray-800 text-white`: Fundo cinza escuro e texto branco.
+      * `border-green-600`: Cor da borda em um tom de verde.
+      * `focus:outline-none focus:ring-2 focus:ring-yellow-400`: Estilos para quando o campo está em foco, removendo a borda padrão e adicionando um anel amarelo.
+
+  * **Botão:**
+
+      * `bg-yellow-500`: Cor de fundo amarela.
+      * `hover:bg-yellow-600`: Cor de fundo amarela mais escura ao passar o mouse.
+      * `text-black`: Cor do texto preta.
+      * `font-bold py-2 px-4 rounded`: Estilos de fonte, preenchimento e bordas arredondadas.
+      * `w-full`: Ocupa toda a largura.
+      * `transition duration-300 ease-in-out`: Adiciona uma transição suave para as mudanças de estilo.

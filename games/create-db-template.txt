@@ -1,0 +1,2 @@
+CREATE DATABASE banco_games
+    DEFAULT CHARACTER SET = 'utf8mb4';

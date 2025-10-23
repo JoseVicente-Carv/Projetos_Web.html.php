@@ -1,0 +1,8 @@
+CREATE TABLE `tabela_games` (
+    `id_jogo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Primary Key',
+    `produtor` varchar(40) DEFAULT NULL,
+    `plataforma` varchar(40) DEFAULT NULL,
+    `preco` decimal(10, 2) DEFAULT NULL,
+    `nome` varchar(40) DEFAULT NULL,
+    PRIMARY KEY (`id_jogo`)
+) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_general_ci

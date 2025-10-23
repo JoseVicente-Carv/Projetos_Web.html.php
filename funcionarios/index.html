@@ -1,0 +1,28 @@
+<div>
+    <h2>
+        Cadastro de funcionarios. Vers. 0.1
+    </h2>
+</div>
+
+<form class="max-w-sm mx-auto" method="post" 
+action="inserir.php" >
+
+<!-- Peça ao usuário os dados do funcionario a serem registrados. -->
+    <div>
+        <label>Nome: </label>
+        <input placeholder="Ex.: Luís Felipe Oliveira Damasio" type="text" name="nomeDigitado">
+    </div>
+    <div>
+        <label>Função: </label>
+        <input placeholder="Ex.: Secreataria de administração" type="text" name="funcaoDigitado">
+    </div>
+    <div>
+        <label>Salário: R$</label>
+        <input placeholder="Ex.: 568,72" type="number" name="salarioDigitado">
+    </div>
+
+    <!-- Enviar daods coletados para o banco de dados. -->
+     <div>
+        <button type="submit">Cadastrar funcionário.</button>
+     </div>
+</form>
